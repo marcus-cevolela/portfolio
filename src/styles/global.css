@@ -15,7 +15,7 @@
         min-height: 100vh;
         background-color: var(--bg);
         color: var(--text);
-        font-family: "DM Sans", sans-serif;
+        font-family: var(--font-body);
         transition:
             background-color 200ms ease,
             color 200ms ease;

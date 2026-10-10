@@ -1,3 +1,10 @@
+/* fontes */
+:root {
+    --font-heading: "Space Grotesk", sans-serif;
+    --font-body: "DM Sans", sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+}
+
 /* azul - tema escuro */
 :root[data-theme="dark"][data-accent="blue"] {
     --bg: #0E1016;

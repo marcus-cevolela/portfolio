@@ -1,0 +1,55 @@
+/* azul - tema escuro */
+:root[data-theme="dark"][data-accent="blue"] {
+    --bg: #0E1016;
+    --surface: #151821;
+    --border: #262A36;
+    --border-strong: #3A4052;
+    --text: #ECEEF4;
+    --text-secondary: #A3A9B8;
+    --text-tertiary: #8A91A3;
+    --primary: #015AFC;
+    --highlight: #5C8DFF;
+    --highlight-bg: #0D1B3D;
+}
+
+/* azul - tema claro */
+:root[data-theme="light"][data-accent="blue"] {
+    --bg: #FFFFFF;
+    --surface: #F6F7FB;
+    --border: #E3E6EE;
+    --border-strong: #CFD3DE;
+    --text: #15171C;
+    --text-secondary: #4A4F5E;
+    --text-tertiary: #6B7080;
+    --primary: #015AFC;
+    --highlight: #015AFC;
+    --highlight-bg: #EEF4FF;
+}
+
+/* vermelho - tema escuro */
+:root[data-theme="dark"][data-accent="red"] {
+    --bg: #160E0E;
+    --surface: #1F1414;
+    --border: #3A2626;
+    --border-strong: #4D3434;
+    --text: #F6ECEC;
+    --text-secondary: #C4AFAF;
+    --text-tertiary: #A38E8E;
+    --primary: #D92D20;
+    --highlight: #FF6B5E;
+    --highlight-bg: #2E1412;
+}
+
+/* vermelho - tema claro */
+:root[data-theme="light"][data-accent="red"] {
+    --bg: #FBF6F6;
+    --surface: #F5ECEC;
+    --border: #EADCDC;
+    --border-strong: #DCC8C8;
+    --text: #1F1414;
+    --text-secondary: #5A4A4A;
+    --text-tertiary: #7A6767;
+    --primary: #D92D20;
+    --highlight: #C42A1E;
+    --highlight-bg: #FDECEA;
+}

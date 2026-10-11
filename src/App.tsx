@@ -4,7 +4,7 @@ function App() {
   const { theme, accent, toggleTheme, toggleAccent } = useTheme()
 
   return (
-    <main>
+    <main className="min-h-screen bg-bg p-8 text-text">
       <h1>Marcus Cevolela</h1>
       <p>Tema atual: {theme}</p>
       <p>Cor atual: {accent}</p>

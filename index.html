@@ -6,8 +6,40 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    try {
+      const savedPreferences = localStorage.getItem('portfolio-theme')
+
+      if (savedPreferences) {
+        const preferences = JSON.parse(savedPreferences)
+
+        if (
+          (preferences.theme === 'light' || preferences.theme === 'dark') &&
+          (preferences.accent === 'blue' || preferences.accent === 'red')
+        ) {
+          document.documentElement.dataset.theme = preferences.theme
+          document.documentElement.dataset.accent = preferences.accent
+        } else {
+          applySystemPreferences()
+        }
+      } else {
+        applySystemPreferences()
+      }
+    } catch {
+      applySystemPreferences()
+    }
+
+    function applySystemPreferences() {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+      document.documentElement.dataset.theme = prefersDark ? 'dark' : 'light'
+      document.documentElement.dataset.accent = 'blue'
+    }
+  </script>
   <title>portfolio</title>
 </head>
 

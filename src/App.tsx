@@ -1,17 +1,17 @@
-import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useTheme } from './hooks/useTheme'
 import { supportedLanguages, type Language } from './i18n/language'
 import { localizedRoutes } from './i18n/routes'
 import i18n from './i18n'
-import { LanguageSwitcher } from './components/LanguageSwitcher/LanguageSwitcher'
+import { MainLayout } from './layouts/MainLayout'
 
 function HomePage() {
-  const { theme, accent, toggleTheme, toggleAccent } = useTheme()
+  const { theme, accent, toggleTheme} = useTheme()
   const { t } = useTranslation()
 
   return (
-    <main className="min-h-screen bg-bg p-8 text-text">
+    <div className="p-8">
       <h1>Marcus Cevolela</h1>
 
       <p>{t('test.greeting')}</p>
@@ -20,9 +20,8 @@ function HomePage() {
       <p>Cor atual: {accent}</p>
 
       <button onClick={toggleTheme}>Trocar Tema</button>
-      <button onClick={toggleAccent}>Trocar Cor</button>
-      <LanguageSwitcher />
-    </main>
+
+    </div>
   )
 }
 
@@ -39,7 +38,7 @@ function createLanguageRoute(language: Language) {
       return null
     },
 
-    element: <Outlet />,
+    element: <MainLayout />,
 
     children: [
       {

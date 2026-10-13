@@ -23,7 +23,7 @@
 
 /* azul - tema claro */
 :root[data-theme="light"][data-accent="blue"] {
-    --bg: #FFFFFF;
+    --bg: #f9f7ff;
     --surface: #F6F7FB;
     --border: #E3E6EE;
     --border-strong: #CFD3DE;

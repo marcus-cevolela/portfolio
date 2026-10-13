@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom'
 import { supportedLanguages, type Language } from '../../i18n/language'
 import { localizedRoutes } from '../../i18n/routes'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ChevronDown, ChevronUp, Check } from 'lucide-react'
 
 const languageNames: Record<Language, string> = {
@@ -45,6 +45,35 @@ function getEquivalentRoute(pathname: string, language: Language): string {
 export function LanguageSwitcher() {
     const [isOpen, setIsOpen] = useState(false)
 
+    const languageSwitcherRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+    if (!isOpen) return
+
+    function handleClickOutside(event: MouseEvent) {
+        if (
+            languageSwitcherRef.current &&
+            !languageSwitcherRef.current.contains(event.target as Node)
+        ) {
+            setIsOpen(false)
+        }
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+        if (event.key === 'Escape') {
+            setIsOpen(false)
+        }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+        document.removeEventListener('mousedown', handleClickOutside)
+        document.removeEventListener('keydown', handleKeyDown)
+    }
+}, [isOpen])
+
     const location = useLocation()
     const navigate = useNavigate()
 
@@ -62,13 +91,13 @@ export function LanguageSwitcher() {
     }
 
     return (
-        <div className='relative'>
+        <div ref={languageSwitcherRef} className="relative">
             <button
                 type='button'
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label="Selecionar idioma"
                 aria-expanded={isOpen}
-                className="min-w-11 h-11 border-border border-2 rounded-xl px-3 py-0 inline-flex items-center gap-1 bg-bg font-semibold text-[15px]"
+                className="min-w-[75.5px] h-11 border-border border-2 rounded-xl px-3 py-0 inline-flex items-center gap-1 bg-bg font-mono font-semibold text-[15px]"
             >
                 <img
                     src={selectedLanguage ? languageFlags[selectedLanguage] : 'https://flagsapi.com/BR/flat/64.png'}
@@ -80,7 +109,7 @@ export function LanguageSwitcher() {
             </button>
 
             {isOpen && (
-                <div className='bg-surface flex flex-col w-65 border-border border-2 gap-1 rounded-xl px-2 py-2 absolute top-full z-50'>
+                <div className='bg-surface flex flex-col w-60.5 border-border border-2 gap-1 rounded-xl px-2 py-2 absolute top-full z-50 mt-1'>
                     {supportedLanguages.map((language) => (
                         <button
                             key={language}
@@ -103,8 +132,8 @@ export function LanguageSwitcher() {
                                     {languageComplete[language]}
                                 </span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <span>
+                            <div className="flex items-center justify-center gap-2">
+                                <span className='font-mono text-text-secondary text-sm'>
                                     {languageNames[language]}
                                 </span>
                                 {<Check className={currentLanguage === language ? 'block text-highlight' : 'invisible'} />}

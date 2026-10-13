@@ -17,6 +17,8 @@
     --primary: #015AFC;
     --highlight: #5C8DFF;
     --highlight-bg: #0D1B3D;
+    --hover: #1E2433;
+    --primary-hover: #0149CC;
 }
 
 /* azul - tema claro */
@@ -30,7 +32,9 @@
     --text-tertiary: #6B7080;
     --primary: #015AFC;
     --highlight: #015AFC;
-    --highlight-bg: #EEF4FF;
+    --highlight-bg: #CCDEFF;
+    --hover: #E5E9F1;
+    --primary-hover: #0149CC;
 }
 
 /* vermelho - tema escuro */
@@ -45,6 +49,9 @@
     --primary: #D92D20;
     --highlight: #FF6B5E;
     --highlight-bg: #2E1412;
+    --hover: #2B1C1C;
+    --primary-hover: #B42318;
+    
 }
 
 /* vermelho - tema claro */
@@ -58,5 +65,7 @@
     --text-tertiary: #7A6767;
     --primary: #D92D20;
     --highlight: #C42A1E;
-    --highlight-bg: #FDECEA;
+    --highlight-bg: #FFCCCC;
+    --hover: #ebdddd;
+    --primary-hover: #B42318;
 }

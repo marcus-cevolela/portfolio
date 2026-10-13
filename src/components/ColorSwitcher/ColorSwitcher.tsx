@@ -4,7 +4,7 @@ export function ColorSwitcher() {
     const {accent, setAccent} = useTheme()
 
     return (
-        <div className='inline-flex items-center gap-0.5 px-1 h-11 border-2 border-border rounded-xl bg-bg'>
+        <div className='inline-flex items-center gap-0.5 px-1 min-w-11 h-11 border-2 border-border rounded-xl bg-bg'>
             <button
                 aria-label="Alternar para Azul"
                 aria-pressed={accent === 'blue'}

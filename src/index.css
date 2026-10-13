@@ -15,4 +15,7 @@
     --color-primary: var(--primary);
     --color-highlight: var(--highlight);
     --color-highlight-bg: var(--highlight-bg);
+
+    --color-hover: var(--hover);
+    --color-primary-hover: var(--primary-hover);
 }

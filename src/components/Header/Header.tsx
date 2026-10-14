@@ -20,7 +20,7 @@ export function Header() {
 
     const logo = logoMap[`${theme}-${accent}`] || logoMap["dark-blue"]
     return (
-        <header className="flex items-center justify-between px-8 py-4 border-b-primary border-b-2 shadow-[0_2px_4px_var(--primary)]">
+        <header className="flex items-center justify-between px-10 py-4 border-b-primary border-b-2 shadow-[0_2px_4px_var(--primary)]">
             <h1><a href="/"><img src={logo} alt="Logo Marcus Cevolela" className="w-20 h-auto inline-block hover:scale-105 transition-all ease-in-out duration-250" /></a></h1>
             <nav>
                 <ul className="flex items-center gap-10 text-text-secondary text-base font-bold">

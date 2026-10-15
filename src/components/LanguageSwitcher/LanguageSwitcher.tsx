@@ -42,37 +42,43 @@ function getEquivalentRoute(pathname: string, language: Language): string {
     return localizedRoutes[currentPage][language]
 }
 
-export function LanguageSwitcher() {
+type LanguageSwitcherProps = {
+    variant?: 'default' | 'mobile'
+}
+
+export function LanguageSwitcher({
+    variant = 'default',
+}: LanguageSwitcherProps) {
     const [isOpen, setIsOpen] = useState(false)
 
     const languageSwitcherRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-    if (!isOpen) return
+        if (!isOpen) return
 
-    function handleClickOutside(event: MouseEvent) {
-        if (
-            languageSwitcherRef.current &&
-            !languageSwitcherRef.current.contains(event.target as Node)
-        ) {
-            setIsOpen(false)
+        function handleClickOutside(event: MouseEvent) {
+            if (
+                languageSwitcherRef.current &&
+                !languageSwitcherRef.current.contains(event.target as Node)
+            ) {
+                setIsOpen(false)
+            }
         }
-    }
 
-    function handleKeyDown(event: KeyboardEvent) {
-        if (event.key === 'Escape') {
-            setIsOpen(false)
+        function handleKeyDown(event: KeyboardEvent) {
+            if (event.key === 'Escape') {
+                setIsOpen(false)
+            }
         }
-    }
 
-    document.addEventListener('mousedown', handleClickOutside)
-    document.addEventListener('keydown', handleKeyDown)
+        document.addEventListener('mousedown', handleClickOutside)
+        document.addEventListener('keydown', handleKeyDown)
 
-    return () => {
-        document.removeEventListener('mousedown', handleClickOutside)
-        document.removeEventListener('keydown', handleKeyDown)
-    }
-}, [isOpen])
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+            document.removeEventListener('keydown', handleKeyDown)
+        }
+    }, [isOpen])
 
     const location = useLocation()
     const navigate = useNavigate()
@@ -80,7 +86,7 @@ export function LanguageSwitcher() {
     const currentLanguage = location.pathname.split('/')[1]
 
     const selectedLanguage = supportedLanguages.find(
-        (language) => language === currentLanguage
+        (language) => language === currentLanguage,
     )
 
     function handleLanguageChange(language: Language) {
@@ -92,24 +98,62 @@ export function LanguageSwitcher() {
 
     return (
         <div ref={languageSwitcherRef} className="relative">
-            <button
-                type='button'
-                onClick={() => setIsOpen(!isOpen)}
-                aria-label="Selecionar idioma"
-                aria-expanded={isOpen}
-                className="min-w-[75.5px] h-11 border-border border-2 rounded-xl px-3 py-0 inline-flex items-center gap-1 bg-bg font-mono font-semibold text-[15px]"
-            >
-                <img
-                    src={selectedLanguage ? languageFlags[selectedLanguage] : 'https://flagsapi.com/BR/flat/64.png'}
-                    alt={selectedLanguage ? languageAlt[selectedLanguage] : 'Bandeira do Brasil'}
-                    className='w-8 h-8 rounded-xl'
-                />
-                {selectedLanguage ? languageNames[selectedLanguage] : 'PT-BR'}
-                {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-            </button>
+            {variant === 'mobile' ? (
+                <button
+                    type="button"
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Selecionar idioma"
+                    aria-expanded={isOpen}
+                    className="flex w-full h-14 items-center justify-between gap-2 rounded-[14px] border-2 border-border bg-bg px-3 font-mono text-[15px] font-semibold">
+                    <span className="flex min-w-0 items-center gap-2">
+                        <img
+                            src={selectedLanguage ? languageFlags[selectedLanguage] : languageFlags.pt}
+                            alt={selectedLanguage ? languageAlt[selectedLanguage] : languageAlt.pt}
+                            className="w-8 h-8 shrink-0 rounded-xl"
+                        />
+
+                        <span className="truncate text-left">
+                            {selectedLanguage ? languageComplete[selectedLanguage] : 'Português'}
+                        </span>
+
+                        <span className="shrink-0 text-text-secondary">
+                            ({selectedLanguage ? languageNames[selectedLanguage] : 'PT'})
+                        </span>
+                    </span>
+
+                    {isOpen ? (
+                        <ChevronUp size={16} className="shrink-0" />
+                    ) : (
+                        <ChevronDown size={16} className="shrink-0" />
+                    )}
+                </button>
+            ) : (
+                <button
+                    type="button"
+                    onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Selecionar idioma"
+                    aria-expanded={isOpen}
+                    className="inline-flex h-11 min-w-[75.5px] items-center gap-1 rounded-xl border-2 border-border bg-bg px-3 py-0 font-mono text-[15px] font-semibold"
+                >
+                    <img
+                        src={selectedLanguage ? languageFlags[selectedLanguage] : languageFlags.pt}
+                        alt={selectedLanguage ? languageAlt[selectedLanguage] : languageAlt.pt}
+                        className="h-8 w-8 rounded-xl"
+                    />
+
+                    {selectedLanguage ? languageNames[selectedLanguage] : 'PT-BR'}
+
+                    {isOpen ? (
+                        <ChevronUp size={16} />
+                    ) : (
+                        <ChevronDown size={16} />
+                    )}
+                </button>
+            )}
 
             {isOpen && (
-                <div className='bg-surface flex flex-col w-60.5 border-border border-2 gap-1 rounded-xl px-2 py-2 absolute top-full z-50 mt-1'>
+                <div className={`absolute top-full z-50 mt-1 flex flex-col gap-1 rounded-xl border-2 border-border bg-surface px-2 py-2 ${variant === "mobile" ? "w-full" : "w-60.5"
+                    }`}>
                     {supportedLanguages.map((language) => (
                         <button
                             key={language}
@@ -118,26 +162,29 @@ export function LanguageSwitcher() {
                             aria-pressed={currentLanguage === language}
                             disabled={currentLanguage === language}
                             onClick={() => handleLanguageChange(language)}
-                            className={`flex items-center px-2 min-h-12 gap-1 justify-between ${currentLanguage === language ? 'bg-highlight-bg rounded-xl' : 'bg-transparent transition-all hover:bg-hover hover:rounded-xl '}`}
+                            className={`flex min-h-12 items-center justify-between gap-1 px-2 ${currentLanguage === language
+                                    ? 'rounded-xl bg-highlight-bg'
+                                    : 'bg-transparent transition-all hover:rounded-xl hover:bg-hover'
+                                }`}
                         >
-                            <div className="flex items-center gap-2">
-                                <span>
-                                    <img
-                                        src={languageFlags[language]}
-                                        alt={languageAlt[language]}
-                                        className='w-8 h-8 rounded-xl'
-                                    />
-                                </span>
-                                <span>
-                                    {languageComplete[language]}
-                                </span>
-                            </div>
-                            <div className="flex items-center justify-center gap-2">
-                                <span className='font-mono text-text-secondary text-sm'>
+                            <span className="flex items-center gap-2">
+                                <img
+                                    src={languageFlags[language]}
+                                    alt={languageAlt[language]}
+                                    className="h-8 w-8 rounded-xl"
+                                />
+
+                                <span>{languageComplete[language]}</span>
+                            </span>
+
+                            <span className="flex items-center justify-center gap-2">
+                                <span className="font-mono text-sm text-text-secondary">
                                     {languageNames[language]}
                                 </span>
-                                {<Check className={currentLanguage === language ? 'block text-highlight' : 'invisible'} />}
-                            </div>
+
+                                <Check className={currentLanguage === language ? 'text-highlight' : 'invisible'}
+                                />
+                            </span>
                         </button>
                     ))}
                 </div>

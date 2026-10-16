@@ -60,7 +60,7 @@ export function Footer() {
                 {/* links rápidos e tecnologias */}
                 <div className="order-3 lg:order-3 lg:flex lg:flex-col lg:items-end lg:gap-4">
 
-                    <div className="relative grid grid-cols-2 gap-4 sm:items-start lg:flex lg:flex-col lg:items-end lg:gap-4 min-[400px]:before:content-[''] min-[400px]:before:absolute min-[400px]:before:left-1/2 min-[400px]:before:top-0 min-[400px]:before:bottom-0 min-[400px]:before:w-0.5 min-[400px]:before:bg-primary min-[400px]:before:shadow-[0_0_4px_var(--primary)] min-[640px]:before:hidden before:content-[''] before:absolute before:left-1/2 before:top-0 before:bottom-0 before:w-0.5 before:bg-primary before:shadow-[0_0_4px_var(--primary)] min-[640px]:before:hidden">
+                    <div className="relative grid grid-cols-2 gap-4 sm:items-start lg:flex lg:flex-col lg:items-end lg:gap-4 min-[400px]:before:content-[''] min-[400px]:before:absolute min-[400px]:before:left-1/2 min-[400px]:before:top-0 min-[400px]:before:bottom-0 min-[400px]:before:w-0.5 min-[400px]:before:bg-primary min-[400px]:before:shadow-[0_0_4px_var(--primary)] min-[640px]:before:hidden before:content-[''] before:absolute before:left-1/2 before:top-0 before:bottom-0 before:w-0.5 before:bg-primary before:shadow-[0_0_4px_var(--primary)]">
 
                         {/* links rápidos */}
                         <div>

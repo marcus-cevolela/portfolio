@@ -1,5 +1,5 @@
 import { ArrowDownToLine, ArrowUp } from 'lucide-react'
-import { FaLinkedin, FaGithub, FaWhatsapp, FaInstagram, FaEnvelope } from 'react-icons/fa'
+import { SocialLinks } from "../SocialLinks/SocialLinks"
 import { useTheme } from "../../hooks/useTheme"
 import logoDarkBlue from "../../assets/logo-dark-blue.svg"
 import logoDarkRed from "../../assets/logo-dark-red.svg"
@@ -17,34 +17,6 @@ export function Footer() {
     }
 
     const logo = logoMap[`${theme}-${accent}`] || logoMap["dark-blue"]
-
-    const socialLinks = [
-        {
-            name: 'LinkedIn',
-            href: 'https://www.linkedin.com/in/marcus-cevolela/',
-            icon: <FaLinkedin className="w-6.25 h-6.25 shrink-0" />,
-        },
-        {
-            name: 'GitHub',
-            href: 'https://github.com/marcus-cevolela',
-            icon: <FaGithub className="w-6.25 h-6.25 shrink-0" />,
-        },
-        {
-            name: 'WhatsApp',
-            href: 'https://wa.me/5521981213090',
-            icon: <FaWhatsapp className="w-6.25 h-6.25 shrink-0" strokeWidth={20} />,
-        },
-        {
-            name: 'Instagram',
-            href: 'https://www.instagram.com/cevolela.dev/',
-            icon: <FaInstagram className="w-6.25 h-6.25 shrink-0" />,
-        },
-        {
-            name: 'Email',
-            href: 'mailto:marcus.cevolela@gmail.com',
-            icon: <FaEnvelope className="w-6.25 h-6.25 shrink-0" />,
-        },
-    ]
 
     const navigationLinks = [
         { name: 'Projetos', href: '#projects' },
@@ -73,19 +45,7 @@ export function Footer() {
                         Baixar Currículo
                     </a>
 
-                    <div className="grid grid-cols-2 gap-2 max-w-lg md:max-w-3xl lg:max-w-md">
-                        {socialLinks.map((social) => (
-                            <a
-                                href={social.href} rel="noopener noreferrer" key={social.name}
-                                target={social.name !== 'Email' ? '_blank' : undefined}
-                                className={`flex items-center gap-2 border-2 border-border hover:border-primary hover:text-primary rounded-xl transition-all hover:scale-103 ease-in-out duration-250 px-6 py-3 justify-center bg-surface font-mono font-semibold ${
-                                    social.name === 'Email' ? 'col-span-2' : ''
-                                }`}>
-                                {social.icon}
-                                {social.name}
-                            </a>
-                        ))}
-                    </div>
+                <SocialLinks />
                 </div>
                 
                 {/* logo */}

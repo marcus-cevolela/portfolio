@@ -112,12 +112,16 @@ export function LanguageSwitcher({
                             className="w-8 h-8 shrink-0 rounded-xl"
                         />
 
-                        <span className="truncate text-left">
-                            {selectedLanguage ? languageComplete[selectedLanguage] : 'Português'}
-                        </span>
+                        <span className="flex min-w-0 items-center gap-1">
+                            <span className="min-w-0 flex-1 truncate text-left">
+                                {selectedLanguage
+                                    ? languageComplete[selectedLanguage]
+                                    : 'Português'}
+                            </span>
 
-                        <span className="shrink-0 text-text-secondary">
-                            ({selectedLanguage ? languageNames[selectedLanguage] : 'PT'})
+                            <span className="shrink-0 text-text-secondary">
+                                ({selectedLanguage ? languageNames[selectedLanguage] : 'PT'})
+                            </span>
                         </span>
                     </span>
 
@@ -152,8 +156,12 @@ export function LanguageSwitcher({
             )}
 
             {isOpen && (
-                <div className={`absolute top-full z-50 mt-1 flex flex-col gap-1 rounded-xl border-2 border-border bg-surface px-2 py-2 ${variant === "mobile" ? "w-full" : "w-60.5"
-                    }`}>
+                <div
+                    className={`absolute top-full left-0 z-50 mt-1 flex flex-col gap-1 rounded-xl border-2 border-border bg-surface px-2 py-2 ${variant === "mobile"
+                        ? "w-max min-w-full max-w-[calc(100vw-7rem)]"
+                        : "w-60.5"
+                        }`}
+                >
                     {supportedLanguages.map((language) => (
                         <button
                             key={language}
@@ -163,8 +171,8 @@ export function LanguageSwitcher({
                             disabled={currentLanguage === language}
                             onClick={() => handleLanguageChange(language)}
                             className={`flex min-h-12 items-center justify-between gap-1 px-2 ${currentLanguage === language
-                                    ? 'rounded-xl bg-highlight-bg'
-                                    : 'bg-transparent transition-all hover:rounded-xl hover:bg-hover'
+                                ? 'rounded-xl bg-highlight-bg'
+                                : 'bg-transparent transition-all hover:rounded-xl hover:bg-hover'
                                 }`}
                         >
                             <span className="flex items-center gap-2">

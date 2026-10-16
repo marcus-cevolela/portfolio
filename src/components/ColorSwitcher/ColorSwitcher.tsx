@@ -41,12 +41,15 @@ export function ColorSwitcher({
                     : "border-border"
                     }`}
             >
-                <span className={`w-5 h-5 shrink-0 rounded-full bg-[#D92D20]  ${accent === "red"
-                    ? "ring-2 ring-[#D92D20] ring-offset-2 ring-offset-bg"
-                    : ""
-                    }`}
-                />
-                <span>Vermelho</span>
+                <span className="flex items-center gap-2">
+                    <span
+                        className={`w-5 h-5 shrink-0 rounded-full bg-[#D92D20] ${accent === "red"
+                                ? "ring-2 ring-[#D92D20] ring-offset-2 ring-offset-bg"
+                                : ""
+                            }`}
+                    />
+                    <span>Vermelho</span>
+                </span>
             </button>
         </div>
     ) : (

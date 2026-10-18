@@ -1,5 +1,19 @@
 {
-    "test": {
-        "greeting": "¡Hola, mundo!"
+    "hero": {
+        "availability": "// Disponible para prácticas y trabajos freelance",
+        "role": "DESARROLLADOR FULLSTACK",
+        "description": {
+            "headline": "Entran ideas, salen experiencias digitales.",
+            "supporting": "En el medio, diseño y código hechos con atención a cada detalle. De Figma al deploy, un proyecto a la vez."
+        },
+        "actions": {
+            "projects": "Ver proyectos",
+            "contact": "Contáctame"
+        },
+        "featuredProject": {
+            "label": "PROYECTO DESTACADO",
+            "viewProject": "Ver proyecto",
+            "viewCode": "Ver código"
+        }
     }
 }

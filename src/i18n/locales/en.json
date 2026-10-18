@@ -1,5 +1,19 @@
 {
-    "test": {
-        "greeting": "Hello, world!"
+    "hero": {
+        "availability": "// Available for internships and freelance work",
+        "role": "FULLSTACK DEVELOPER",
+        "description": {
+            "headline": "Ideas go in, digital experiences come out.",
+            "supporting": "In between, design and code crafted with attention to every detail. From Figma to deploy, one project at a time."
+        },
+        "actions": {
+            "projects": "View projects",
+            "contact": "Contact me"
+        },
+        "featuredProject": {
+            "label": "FEATURED PROJECT",
+            "viewProject": "View project",
+            "viewCode": "View source"
+        }
     }
 }

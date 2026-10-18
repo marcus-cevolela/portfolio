@@ -1,5 +1,19 @@
 {
-    "test": {
-        "greeting": "Olá, mundo!"
+    "hero": {
+        "availability": "// Disponível para estágio e freelancer",
+        "role": "DESENVOLVEDOR FULLSTACK",
+        "description": {
+            "headline": "Ideias entram, experiências digitais saem.",
+            "supporting": "No meio, design e código feitos com atenção a cada detalhe. Do Figma ao deploy, um projeto de cada vez."
+        },
+        "actions": {
+            "projects": "Ver projetos",
+            "contact": "Falar comigo"
+        },
+        "featuredProject": {
+            "label": "PROJETO EM DESTAQUE",
+            "viewProject": "Ver projeto",
+            "viewCode": "Ver código"
+        }
     }
 }

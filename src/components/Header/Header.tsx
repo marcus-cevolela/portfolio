@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Menu, X, ChevronRight, ArrowDownToLine } from "lucide-react"
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 import { ThemeSwitcher } from "../ThemeSwitcher/ThemeSwitcher";
@@ -10,8 +10,12 @@ import logoDarkRed from "../../assets/logo-dark-red.svg"
 import logoLightBlue from "../../assets/logo-light-blue.svg"
 import logoLightRed from "../../assets/logo-light-red.svg"
 
-export function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
+interface HeaderProps {
+    isMenuOpen: boolean
+    onMenuToggle: (isOpen: boolean) => void
+}
+
+export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
 
     useEffect(() => {
         document.body.style.overflow = isMenuOpen ? "hidden" : "";
@@ -40,7 +44,7 @@ export function Header() {
                     }`}
                 aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
                 aria-expanded={isMenuOpen}
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={() => onMenuToggle(!isMenuOpen)}
             >
                 {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -80,7 +84,7 @@ export function Header() {
                 <>
                     <div
                         className="fixed inset-0 z-30 bg-black/70 md:hidden"
-                        onClick={() => setIsMenuOpen(false)}
+                        onClick={() => onMenuToggle(false)}
                         aria-hidden="true"
                     />
 
@@ -91,7 +95,7 @@ export function Header() {
                         <div className="mb-4 flex items-center justify-between">
                             <a
                                 href="/"
-                                onClick={() => setIsMenuOpen(false)}
+                                onClick={() => onMenuToggle(false)}
                                 aria-label="Voltar para a página inicial"
                             >
                                 <img src={logo} alt="Logo Marcus Cevolela" className="w-16 h-auto" />
@@ -100,7 +104,7 @@ export function Header() {
                             <button
                                 type="button"
                                 aria-label="Fechar menu"
-                                onClick={() => setIsMenuOpen(false)}
+                                onClick={() => onMenuToggle(false)}
                                 className="flex h-11 w-11 items-center justify-center rounded-xl border border-border transition-colors duration-250 hover:border-primary hover:text-primary"
                             >
                                 <X size={24} />
@@ -114,7 +118,7 @@ export function Header() {
                                     <a
                                         className="relative flex items-center justify-between transition-all duration-250 hover:scale-102 hover:text-primary"
                                         href="#projects"
-                                        onClick={() => setIsMenuOpen(false)}
+                                        onClick={() => onMenuToggle(false)}
                                     >
                                         PROJETOS <ChevronRight size={20} strokeWidth={3} aria-hidden="true" />
                                     </a>
@@ -124,7 +128,7 @@ export function Header() {
                                     <a
                                         className="relative flex items-center justify-between transition-all duration-250 hover:scale-102 hover:text-primary"
                                         href="#about"
-                                        onClick={() => setIsMenuOpen(false)}
+                                        onClick={() => onMenuToggle(false)}
                                     >
                                         SOBRE <ChevronRight size={20} strokeWidth={3} aria-hidden="true" />
                                     </a>
@@ -134,7 +138,7 @@ export function Header() {
                                     <a
                                         className="relative flex items-center justify-between transition-all duration-250 hover:scale-102 hover:text-primary"
                                         href="#contact"
-                                        onClick={() => setIsMenuOpen(false)}
+                                        onClick={() => onMenuToggle(false)}
                                     >
                                         CONTATO <ChevronRight size={20} strokeWidth={3} aria-hidden="true" />
                                     </a>

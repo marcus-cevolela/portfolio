@@ -1,9 +1,14 @@
 import { useEffect, useState } from 'react'
 import { FaWhatsapp, FaArrowUp } from 'react-icons/fa'
 
-export function FloatingActions() {
+interface FloatingActionsProps {
+    isMenuOpen: boolean
+}
+
+export function FloatingActions({ isMenuOpen }: FloatingActionsProps) {
     const [showBackToTop, setShowBackToTop] = useState(false)
     const [hideActions, setHideActions] = useState(false)
+    const shouldHideActions = hideActions || isMenuOpen
 
     useEffect(() => {
         const handleScroll = () => {
@@ -39,9 +44,9 @@ export function FloatingActions() {
     }, [])
     return (
         <div
-            className={`fixed bottom-6 right-6 z-50 flex flex-col items-center gap-4 transition-all duration-300 ${hideActions
-                    ? 'pointer-events-none translate-y-4 opacity-0'
-                    : 'translate-y-0 opacity-100'
+            className={`fixed bottom-6 right-6 z-50 flex flex-col items-center gap-4 transition-all duration-300 ${shouldHideActions
+                ? 'pointer-events-none translate-y-4 opacity-0'
+                : 'translate-y-0 opacity-100'
                 }`}
         >
             <button

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" fill="none">
+  <title>Circuito de fundo (vermelho, claro)</title>
+  <defs>
+    <pattern id="circuito" width="480" height="480" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#D92D20" stroke-opacity=".10" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M0 80H110l40 40H320l40-40H480"/><path d="M0 360H90l40 40H250l40-40H480"/><path d="M60 160H140l40 40H300"/><path d="M300 200l40 40V300H360"/><path d="M400 150V220l30 30H470"/><path d="M60 250V330"/><path d="M160 440H320"/><path d="M160 452H320"/><path d="M160 464H320"/><path d="M360 312H372"/><path d="M360 324H372"/><path d="M428 300H440"/><path d="M428 312H440"/><path d="M428 324H440"/><rect x="372" y="288" width="56" height="48" rx="4"/><circle cx="60" cy="160" r="4"/><circle cx="300" cy="200" r="4"/><circle cx="340" cy="300" r="4"/><circle cx="400" cy="150" r="4"/><circle cx="470" cy="250" r="4"/><circle cx="60" cy="250" r="4"/><circle cx="60" cy="330" r="4"/><circle cx="160" cy="440" r="3"/><circle cx="160" cy="452" r="3"/><circle cx="160" cy="464" r="3"/><circle cx="320" cy="440" r="3"/><circle cx="320" cy="452" r="3"/><circle cx="320" cy="464" r="3"/><circle cx="110" cy="80" r="3"/><circle cx="250" cy="400" r="3"/></g>
+    </pattern>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.55" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="mascara" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+      <rect width="1920" height="1080" fill="url(#fade)"/>
+    </mask>
+  </defs>
+  <g mask="url(#mascara)">
+    <rect width="1920" height="1080" fill="url(#circuito)"/>
+  </g>
+</svg>

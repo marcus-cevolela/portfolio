@@ -44,7 +44,7 @@ export function Hero() {
     const backgroundTheme = background[theme][accent]
 
     return (
-        <section className="relative mx-auto grid min-h-[95vh] w-full max-w-360 grid-cols-1 items-center gap-x-24 gap-y-8 px-6 py-16 lg:grid-cols-[3fr_2fr] lg:px-8 overflow">
+        <section className="relative mx-auto grid min-h-[95svh] w-full max-w-360 grid-cols-1 items-center gap-x-24 gap-y-3 px-5 py-8 sm:gap-y-6 sm:px-8 sm:py-10 lg:grid-cols-[3fr_2fr] lg:gap-x-16 lg:gap-y-8 lg:px-8 lg:py-12 [@media(min-width:1024px)_and_(max-width:1399px)]:px-22 overflow-visible">
             <div className="pointer-events-none absolute inset-0 z-0 w-screen left-1/2 -translate-x-1/2">
                 <img
                     src={backgroundTheme}
@@ -58,27 +58,27 @@ export function Hero() {
                     background: 'linear-gradient(to bottom, transparent 0%, var(--bg) 100%)',
                 }}
             />
-            <div className='relative z-10 flex flex-col order-2 lg:order-1'>
-                <span className='font-mono text-lg text-highlight'>{t('hero.availability')}</span>
-                <h1 className='text-6xl/[0.95] md:text-9xl/[0.95] font-bold'>
+            <div className="relative z-10 order-2 flex w-full flex-col lg:order-1">
+                <span className="whitespace-nowrap font-mono text-[11px] leading-relaxed text-highlight min-[400px]:text-sm sm:text-base md:text-lg">{t('hero.availability')}</span>
+                <h1 className="mt-1 text-5xl/[0.95] min-[400px]:text-5xl/[0.95] md:text-7xl/[0.95] lg:text-9xl/[0.95] [@media(min-width:1024px)_and_(max-width:1399px)_and_(max-height:800px)]:text-6xl/[0.95] font-bold">
                     MARCUS<br />CEVOLELA
                 </h1>
-                <h2 className='text-xl tracking-[0.4em] font-medium text-primary'>
+                <h2 className="mt-1 text-sm font-medium tracking-[0.12em] text-primary min-[400px]:text-base min-[400px]:tracking-[0.2em] sm:text-lg md:text-xl md:tracking-[0.25em] lg:tracking-[0.3em] [@media(min-width:1024px)_and_(max-width:1399px)_and_(max-height:800px)]:text-base [@media(min-width:1024px)_and_(max-width:1399px)_and_(max-height:800px)]:tracking-[0.2em]">
                     {t('hero.role')}
                 </h2>
-                <p className='text-[22px] leading-tight text-text-secondary max-w-full mt-4'>
+                <p className="mt-3 max-w-full text-[15px] leading-relaxed text-text-secondary min-[400px]:text-base sm:mt-4 sm:text-lg md:text-xl lg:mt-4 [@media(min-width:1024px)_and_(max-width:1399px)_and_(max-height:800px)]:mt-2 [@media(min-width:1024px)_and_(max-width:1399px)_and_(max-height:800px)]:text-base">
                     <strong>{t('hero.description.headline')}</strong><br />
                     {t('hero.description.supporting')}
                 </p>
-                <div className='font-semibold flex gap-3 flex-wrap items-center mt-5'>
+                <div className="mt-5 flex w-full flex-col items-center gap-3 font-semibold sm:w-fit sm:flex-row">
                     <a
                         href="#projects"
-                        className='px-8 py-4 rounded-xl bg-primary border-2 border-primary hover:bg-primary-hover hover:border-primary-hover hover:scale-105 transition-all duration-250'>
+                        className="w-full rounded-xl border-2 border-primary bg-primary px-8 py-4 text-center transition-all duration-250 hover:scale-105 hover:border-primary-hover hover:bg-primary-hover sm:w-auto">
                         {t('hero.actions.projects')}
                     </a>
                     <a
                         href="#contact"
-                        className='px-8 py-4 border-2 border-border rounded-xl hover:border-primary hover:bg-hover hover:scale-105 transition-all duration-250'>
+                        className="w-full rounded-xl border-2 border-border px-8 py-4 text-center transition-all duration-250 hover:scale-105 hover:border-primary hover:bg-hover sm:w-auto">
                         {t('hero.actions.contact')}
                     </a>
                 </div>
@@ -87,7 +87,7 @@ export function Hero() {
                 <Logo3D
                     accent={logoAccent}
                     theme={logoTheme}
-                    className="w-full lg:w-[150%] lg:relative lg:left-1/2 lg:-translate-x-1/2"
+                    className="mx-auto w-[95%] max-w-90 min-[400px]:w-[85%] min-[400px]:max-w-90 sm:w-[95%] sm:max-w-105 md:max-w-120 lg:relative lg:left-1/2 lg:w-[150%] lg:max-w-none lg:-translate-x-1/2 [@media(min-width:1024px)_and_(max-width:1399px)]:w-[110%]"
                     fallback={
                         <img
                             src={fallbackLogo}
@@ -96,10 +96,6 @@ export function Hero() {
                         />
                     }
                 />
-
-                <p className="mt-2 text-center font-mono text-sm text-text-secondary">
-                    // clique para girar
-                </p>
             </div>
 
             <FeaturedProject className="relative z-10 order-3 mx-auto w-full lg:col-span-2 lg:max-w-5xl" />

@@ -24,4 +24,4 @@ export function MainLayout() {
             />
         </div>
     )
-} 1
+}

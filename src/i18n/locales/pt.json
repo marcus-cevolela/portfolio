@@ -25,6 +25,14 @@
         "switchToLight": "Alternar para tema claro",
         "switchToDark": "Alternar para tema escuro"
     },
+    "languageSwitcher": {
+        "selectLanguage": "Selecionar idioma",
+        "flags": {
+            "pt": "Bandeira do Brasil",
+            "en": "Bandeira dos Estados Unidos",
+            "es": "Bandeira da Espanha"
+        }
+    },
     "hero": {
         "availability": "// Disponível para estágio e freelancer",
         "role": "DESENVOLVEDOR FULLSTACK",

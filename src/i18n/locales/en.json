@@ -25,6 +25,14 @@
         "switchToLight": "Switch to light theme",
         "switchToDark": "Switch to dark theme"
     },
+    "languageSwitcher": {
+        "selectLanguage": "Select language",
+        "flags": {
+            "pt": "Flag of Brazil",
+            "en": "Flag of the United States",
+            "es": "Flag of Spain"
+        }
+    },
     "hero": {
         "availability": "// Available for internships and freelance work",
         "role": "FULLSTACK DEVELOPER",

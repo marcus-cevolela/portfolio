@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { supportedLanguages, type Language } from '../../i18n/language'
 import { localizedRoutes } from '../../i18n/routes'
@@ -22,12 +23,6 @@ const languageFlags: Record<Language, string> = {
     es: 'https://flagsapi.com/ES/flat/64.png',
 }
 
-const languageAlt: Record<Language, string> = {
-    pt: 'Bandeira do Brasil',
-    en: 'US Flag',
-    es: 'Bandera de España',
-}
-
 function getEquivalentRoute(pathname: string, language: Language): string {
     const currentLanguage = pathname.split('/')[1] as Language
 
@@ -49,6 +44,7 @@ type LanguageSwitcherProps = {
 export function LanguageSwitcher({
     variant = 'default',
 }: LanguageSwitcherProps) {
+    const { t } = useTranslation()
     const [isOpen, setIsOpen] = useState(false)
 
     const languageSwitcherRef = useRef<HTMLDivElement>(null)
@@ -102,13 +98,13 @@ export function LanguageSwitcher({
                 <button
                     type="button"
                     onClick={() => setIsOpen(!isOpen)}
-                    aria-label="Selecionar idioma"
+                    aria-label={t('languageSwitcher.selectLanguage')}
                     aria-expanded={isOpen}
                     className="flex w-full h-14 items-center justify-between gap-2 rounded-[14px] border-2 border-border bg-bg px-3 font-mono text-[15px] font-semibold">
                     <span className="flex min-w-0 items-center gap-2">
                         <img
                             src={selectedLanguage ? languageFlags[selectedLanguage] : languageFlags.pt}
-                            alt={selectedLanguage ? languageAlt[selectedLanguage] : languageAlt.pt}
+                            alt={t(`languageSwitcher.flags.${selectedLanguage ?? 'pt'}`)}
                             className="w-8 h-8 shrink-0 rounded-xl"
                         />
 
@@ -135,13 +131,13 @@ export function LanguageSwitcher({
                 <button
                     type="button"
                     onClick={() => setIsOpen(!isOpen)}
-                    aria-label="Selecionar idioma"
+                    aria-label={t('languageSwitcher.selectLanguage')}
                     aria-expanded={isOpen}
                     className="inline-flex h-11 min-w-[75.5px] items-center gap-1 rounded-xl border-2 border-border bg-bg px-3 py-0 font-mono text-[15px] font-semibold"
                 >
                     <img
                         src={selectedLanguage ? languageFlags[selectedLanguage] : languageFlags.pt}
-                        alt={selectedLanguage ? languageAlt[selectedLanguage] : languageAlt.pt}
+                        alt={t(`languageSwitcher.flags.${selectedLanguage ?? 'pt'}`)}
                         className="h-8 w-8 rounded-xl"
                     />
 
@@ -178,7 +174,7 @@ export function LanguageSwitcher({
                             <span className="flex items-center gap-2">
                                 <img
                                     src={languageFlags[language]}
-                                    alt={languageAlt[language]}
+                                    alt={t(`languageSwitcher.flags.${language}`)}
                                     className="h-8 w-8 rounded-xl"
                                 />
 

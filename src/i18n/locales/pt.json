@@ -15,6 +15,12 @@
         "social": "// Redes e Contato",
         "resume": "Baixar currículo"
     },
+    "colorSwitcher": {
+        "blue": "Azul",
+        "red": "Vermelho",
+        "selectBlue": "Alternar para Azul",
+        "selectRed": "Alternar para Vermelho"
+    },
     "hero": {
         "availability": "// Disponível para estágio e freelancer",
         "role": "DESENVOLVEDOR FULLSTACK",

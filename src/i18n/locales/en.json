@@ -15,6 +15,12 @@
         "social": "// Social Media & Contact",
         "resume": "Download resume"
     },
+    "colorSwitcher": {
+        "blue": "Blue",
+        "red": "Red",
+        "selectBlue": "Switch to Blue",
+        "selectRed": "Switch to Red"
+    },
     "hero": {
         "availability": "// Available for internships and freelance work",
         "role": "FULLSTACK DEVELOPER",

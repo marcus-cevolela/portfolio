@@ -15,6 +15,12 @@
         "social": "// Redes y contacto",
         "resume": "Descargar currículum"
     },
+    "colorSwitcher": {
+        "blue": "Azul",
+        "red": "Rojo",
+        "selectBlue": "Cambiar a azul",
+        "selectRed": "Cambiar a rojo"
+    },
     "hero": {
         "availability": "// Disponible para prácticas y trabajos freelance",
         "role": "DESARROLLADOR FULLSTACK",

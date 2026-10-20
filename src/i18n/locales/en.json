@@ -1,4 +1,21 @@
 {
+    "header": {
+        "navigation": {
+            "projects": "PROJECTS",
+            "about": "ABOUT ME",
+            "contact": "CONTACT"
+        },
+        "accessibility": {
+            "openMenu": "Open menu",
+            "closeMenu": "Close menu",
+            "home": "Back to homepage",
+            "mainNavigation": "Main navigation"
+        },
+        "customization": "// Site Customization",
+        "social": "// Social Media & Contact",
+        "resume": "Download resume"
+    },
+
     "hero": {
         "availability": "// Available for internships and freelance work",
         "role": "FULLSTACK DEVELOPER",

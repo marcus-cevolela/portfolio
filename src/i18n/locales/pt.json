@@ -1,4 +1,21 @@
 {
+    "header": {
+        "navigation": {
+            "projects": "PROJETOS",
+            "about": "SOBRE MIM",
+            "contact": "CONTATO"
+        },
+        "accessibility": {
+            "openMenu": "Abrir menu",
+            "closeMenu": "Fechar menu",
+            "home": "Voltar para a página inicial",
+            "mainNavigation": "Navegação principal"
+        },
+        "customization": "// Personalização do Site",
+        "social": "// Redes e Contato",
+        "resume": "Baixar currículo"
+    },
+    
     "hero": {
         "availability": "// Disponível para estágio e freelancer",
         "role": "DESENVOLVEDOR FULLSTACK",

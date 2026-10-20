@@ -1,4 +1,21 @@
 {
+    "header": {
+        "navigation": {
+            "projects": "PROYECTOS",
+            "about": "SOBRE MÍ",
+            "contact": "CONTACTO"
+        },
+        "accessibility": {
+            "openMenu": "Abrir menú",
+            "closeMenu": "Cerrar menú",
+            "home": "Volver a la página de inicio",
+            "mainNavigation": "Navegación principal"
+        },
+        "customization": "// Personalización",
+        "social": "// Redes y contacto",
+        "resume": "Descargar currículum"
+    },
+
     "hero": {
         "availability": "// Disponible para prácticas y trabajos freelance",
         "role": "DESARROLLADOR FULLSTACK",

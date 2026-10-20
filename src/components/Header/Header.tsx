@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Menu, X, ChevronRight, ArrowDownToLine } from "lucide-react"
 import { LanguageSwitcher } from "../LanguageSwitcher/LanguageSwitcher";
 import { ThemeSwitcher } from "../ThemeSwitcher/ThemeSwitcher";
@@ -16,6 +17,7 @@ interface HeaderProps {
 }
 
 export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
+    const { t } = useTranslation();
 
     useEffect(() => {
         document.body.style.overflow = isMenuOpen ? "hidden" : "";
@@ -36,39 +38,43 @@ export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
     const logo = logoMap[`${theme}-${accent}`] || logoMap["dark-blue"]
     return (
         <header className="relative flex items-center justify-between px-10 py-4 border-b-primary border-b-2 shadow-[0_2px_4px_var(--primary)]">
-            <h1><a href="/"><img src={logo} alt="Logo Marcus Cevolela" className="w-15 md:w-20 h-auto inline-block hover:scale-105 transition-all ease-in-out duration-250" /></a></h1>
+            <h1><a href="/"><img src={logo} alt="Logo Marcus Cevolela" className="w-15 md:w-20 h-auto inline-block hover:scale-105 transition-all ease-in-out duration-250" aria-label={t('header.accessibility.home')} /></a></h1>
 
             <button
                 type="button"
                 className={`relative z-50 md:hidden flex h-11 w-11 items-center justify-center rounded-xl border border-border transition-colors duration-250 hover:border-primary hover:text-primary ${isMenuOpen ? 'invisible' : ''
                     }`}
-                aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+                aria-label={
+                    isMenuOpen
+                        ? t('header.accessibility.closeMenu')
+                        : t('header.accessibility.openMenu')
+                }
                 aria-expanded={isMenuOpen}
                 onClick={() => onMenuToggle(!isMenuOpen)}
             >
                 {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
 
-            <nav className="hidden md:block">
+            <nav className="hidden md:block" aria-label={t('header.accessibility.mainNavigation')}>
                 <ul className="flex items-center md:gap-7 lg:gap-12 text-text-secondary text-base font-bold">
                     <li>
                         <a
                             className="inline-block hover:scale-105 relative transition-all ease-in-out duration-250 hover:text-primary after:content-[''] after:bg-primary after:w-0 after:h-0.5 hover:after:w-full after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:transition-all after:duration-250" href="#projects">
-                            PROJETOS
+                            {t('header.navigation.projects')}
                         </a>
                     </li>
 
                     <li>
                         <a
                             className="inline-block hover:scale-105 relative transition-all ease-in-out duration-250 hover:text-primary after:content-[''] after:bg-primary after:w-0 after:h-0.5 hover:after:w-full after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:transition-all after:duration-250" href="#about">
-                            SOBRE
+                            {t('header.navigation.about')}
                         </a>
                     </li>
 
                     <li>
                         <a
                             className="inline-block hover:scale-105 relative transition-all ease-in-out duration-250 hover:text-primary after:content-[''] after:bg-primary after:w-0 after:h-0.5 hover:after:w-full after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-1 after:transition-all after:duration-250" href="#contact">
-                            CONTATO
+                            {t('header.navigation.contact')}
                         </a>
                     </li>
                 </ul>
@@ -89,21 +95,21 @@ export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
                     />
 
                     {/* menu mobile aberto */}
-                    <div className="fixed inset-y-0 right-0 z-40 flex w-[min(85%,380px)] flex-col overflow-y-auto rounded-l-3xl border-l-2 border-l-primary bg-bg p-6 shadow-[0_2px_4px_var(--primary)] md:hidden">
+                    <div className="fixed inset-y-0 right-0 z-40 flex w-[min(85%,380px)] flex-col overflow-y-auto rounded-l-3xl border-l-2 border-l-primary bg-bg p-6 shadow-[0_2px_4px_var(--primary)] md:hidden" >
 
                         {/* logo e fechar */}
                         <div className="mb-4 flex items-center justify-between">
                             <a
                                 href="/"
                                 onClick={() => onMenuToggle(false)}
-                                aria-label="Voltar para a página inicial"
+                                aria-label={t('header.accessibility.home')}
                             >
                                 <img src={logo} alt="Logo Marcus Cevolela" className="w-16 h-auto" />
                             </a>
 
                             <button
                                 type="button"
-                                aria-label="Fechar menu"
+                                aria-label={t('header.accessibility.closeMenu')}
                                 onClick={() => onMenuToggle(false)}
                                 className="flex h-11 w-11 items-center justify-center rounded-xl border border-border transition-colors duration-250 hover:border-primary hover:text-primary"
                             >
@@ -112,7 +118,7 @@ export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
                         </div>
 
                         {/* navbar */}
-                        <nav aria-label="Navegação principal">
+                        <nav aria-label={t('header.accessibility.mainNavigation')}>
                             <ul className="flex flex-col text-xl font-bold text-text-secondary">
                                 <li className="border-b-2 border-border py-2">
                                     <a
@@ -120,7 +126,7 @@ export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
                                         href="#projects"
                                         onClick={() => onMenuToggle(false)}
                                     >
-                                        PROJETOS <ChevronRight size={20} strokeWidth={3} aria-hidden="true" />
+                                        {t('header.navigation.projects')} <ChevronRight size={20} strokeWidth={3} aria-hidden="true" />
                                     </a>
                                 </li>
 
@@ -130,7 +136,7 @@ export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
                                         href="#about"
                                         onClick={() => onMenuToggle(false)}
                                     >
-                                        SOBRE <ChevronRight size={20} strokeWidth={3} aria-hidden="true" />
+                                        {t('header.navigation.about')} <ChevronRight size={20} strokeWidth={3} aria-hidden="true" />
                                     </a>
                                 </li>
 
@@ -140,7 +146,7 @@ export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
                                         href="#contact"
                                         onClick={() => onMenuToggle(false)}
                                     >
-                                        CONTATO <ChevronRight size={20} strokeWidth={3} aria-hidden="true" />
+                                        {t('header.navigation.contact')} <ChevronRight size={20} strokeWidth={3} aria-hidden="true" />
                                     </a>
                                 </li>
                             </ul>
@@ -148,7 +154,7 @@ export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
 
                         {/* cores */}
                         <div className="mt-4.5">
-                            <h2 className="mb-3 font-mono text-highlight">// Personalização do Site</h2>
+                            <h2 className="mb-3 font-mono text-highlight">{t('header.customization')}</h2>
                             <ColorSwitcher variant="mobile" />
                         </div>
 
@@ -164,7 +170,7 @@ export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
 
                         {/* redes e conato */}
                         <div className="mt-4.5">
-                            <h2 className="mb-3 font-mono text-highlight">// Redes e Contato</h2>
+                            <h2 className="mb-3 font-mono text-highlight">{t('header.social')}</h2>
                             <SocialLinks variant="mobile" />
                         </div>
 
@@ -173,9 +179,16 @@ export function Header({ isMenuOpen, onMenuToggle }: HeaderProps) {
                             <a
                                 href="/files/curriculo-marcus-cevolela.pdf"
                                 download
-                                className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-4 py-4 text-lg font-bold text-white transition-all duration-250 hover:scale-103 hover:bg-primary-hover"
+                                className="flex w-full min-w-0 items-center justify-between gap-3 rounded-xl bg-primary px-4 py-4 text-base font-semibold text-white transition-all duration-250 hover:bg-primary-hover"
                             >
-                                Baixar currículo <ArrowDownToLine size={22} strokeWidth={2.5} />
+                                <span className="min-w-0 flex-1 text-center">
+                                    {t("header.resume")}
+                                </span>
+
+                                <ArrowDownToLine
+                                    size={22}
+                                    className="shrink-0"
+                                />
                             </a>
                         </div>
 

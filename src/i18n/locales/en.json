@@ -21,6 +21,10 @@
         "selectBlue": "Switch to Blue",
         "selectRed": "Switch to Red"
     },
+    "themeSwitcher": {
+        "switchToLight": "Switch to light theme",
+        "switchToDark": "Switch to dark theme"
+    },
     "hero": {
         "availability": "// Available for internships and freelance work",
         "role": "FULLSTACK DEVELOPER",

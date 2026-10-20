@@ -21,6 +21,10 @@
         "selectBlue": "Alternar para Azul",
         "selectRed": "Alternar para Vermelho"
     },
+    "themeSwitcher": {
+        "switchToLight": "Alternar para tema claro",
+        "switchToDark": "Alternar para tema escuro"
+    },
     "hero": {
         "availability": "// Disponível para estágio e freelancer",
         "role": "DESENVOLVEDOR FULLSTACK",

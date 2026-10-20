@@ -21,6 +21,10 @@
         "selectBlue": "Cambiar a azul",
         "selectRed": "Cambiar a rojo"
     },
+    "themeSwitcher": {
+        "switchToLight": "Cambiar al tema claro",
+        "switchToDark": "Cambiar al tema oscuro"
+    },
     "hero": {
         "availability": "// Disponible para prácticas y trabajos freelance",
         "role": "DESARROLLADOR FULLSTACK",

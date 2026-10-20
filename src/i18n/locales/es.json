@@ -15,7 +15,6 @@
         "social": "// Redes y contacto",
         "resume": "Descargar currículum"
     },
-
     "hero": {
         "availability": "// Disponible para prácticas y trabajos freelance",
         "role": "DESARROLLADOR FULLSTACK",
@@ -29,7 +28,8 @@
         },
         "featuredProject": {
             "label": "PROYECTO DESTACADO",
-            "viewProject": "Ver proyecto",
+            "viewProject": "Estudio de caso",
+            "accessProject": "Ver proyecto",
             "viewCode": "Ver código"
         }
     }

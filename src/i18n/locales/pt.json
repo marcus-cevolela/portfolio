@@ -15,7 +15,6 @@
         "social": "// Redes e Contato",
         "resume": "Baixar currículo"
     },
-    
     "hero": {
         "availability": "// Disponível para estágio e freelancer",
         "role": "DESENVOLVEDOR FULLSTACK",
@@ -29,7 +28,8 @@
         },
         "featuredProject": {
             "label": "PROJETO EM DESTAQUE",
-            "viewProject": "Ver projeto",
+            "viewProject": "Estudo de caso",
+            "accessProject": "Acessar projeto",
             "viewCode": "Ver código"
         }
     }

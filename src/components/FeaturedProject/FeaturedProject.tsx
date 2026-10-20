@@ -1,5 +1,5 @@
 import { projects } from '../../data/projects'
-
+import { useTranslation } from 'react-i18next'
 import { Image as ImageIcon, BookOpen, ExternalLink } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
 
@@ -8,6 +8,8 @@ interface FeaturedProjectProps {
 }
 
 export function FeaturedProject({ className }: FeaturedProjectProps) {
+    const { t } = useTranslation()
+
     const randomIndex = Math.floor(Math.random() * projects.length)
     const project = projects[randomIndex]
 
@@ -29,7 +31,7 @@ export function FeaturedProject({ className }: FeaturedProjectProps) {
                 {/* Informações */}
                 <div className="flex min-w-0 flex-col items-start gap-1.5 sm:gap-2">
                     <span className="max-w-full rounded-full border border-highlight bg-primary/20 px-2 py-1 font-mono text-[9px] leading-tight text-highlight min-[400px]:text-[10px] sm:text-xs md:text-base lg:text-sm">
-                        Projeto em destaque
+                        {t('hero.featuredProject.label')}
                     </span>
 
                     <div className="w-full min-w-0">
@@ -64,7 +66,7 @@ export function FeaturedProject({ className }: FeaturedProjectProps) {
                     href={project.caseStudyUrl}
                     className="flex min-w-0 items-center justify-center gap-1 rounded-lg border-2 border-primary bg-primary px-1 py-2 text-center text-[9px] font-semibold leading-tight text-white transition-all duration-250 hover:scale-103 hover:border-primary-hover hover:bg-primary-hover min-[400px]:px-1.5 min-[400px]:text-[10px] sm:gap-2 sm:px-3 sm:text-sm lg:text-base"
                 >
-                    <span>Estudo de caso</span>
+                    <span>{t('hero.featuredProject.viewProject')}</span>
                     <BookOpen
                         size={14}
                         strokeWidth={2}
@@ -76,7 +78,7 @@ export function FeaturedProject({ className }: FeaturedProjectProps) {
                     href={project.demoUrl}
                     className="flex min-w-0 items-center justify-center gap-1 rounded-lg border-2 border-border bg-transparent px-1 py-2 text-center text-[9px] font-semibold leading-tight text-text-primary hover:border-primary hover:bg-hover min-[400px]:px-1.5 min-[400px]:text-[10px] sm:gap-2 sm:px-3 sm:text-sm lg:text-base transition-all duration-250 hover:scale-103"
                 >
-                    <span>Acessar projeto</span>
+                    <span>{t('hero.featuredProject.accessProject')}</span>
                     <ExternalLink
                         size={14}
                         strokeWidth={2}
@@ -88,7 +90,7 @@ export function FeaturedProject({ className }: FeaturedProjectProps) {
                     href={project.githubUrl}
                     className="flex min-w-0 items-center justify-center gap-1 rounded-lg border-2 border-border bg-transparent px-1 py-2 text-center text-[9px] font-semibold leading-tight text-text-primary hover:border-primary hover:bg-hover min-[400px]:px-1.5 min-[400px]:text-[10px] sm:gap-2 sm:px-3 sm:text-sm lg:text-base transition-all duration-250 hover:scale-103"
                 >
-                    <span>Ver código</span>
+                    <span>{t('hero.featuredProject.viewCode')}</span>
                     <FaGithub
                         size={14}
                         className="hidden shrink-0 min-[400px]:block sm:size-5.5 lg:size-7"

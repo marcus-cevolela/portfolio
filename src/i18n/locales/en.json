@@ -15,7 +15,6 @@
         "social": "// Social Media & Contact",
         "resume": "Download resume"
     },
-
     "hero": {
         "availability": "// Available for internships and freelance work",
         "role": "FULLSTACK DEVELOPER",
@@ -29,7 +28,8 @@
         },
         "featuredProject": {
             "label": "FEATURED PROJECT",
-            "viewProject": "View project",
+            "viewProject": "Case study",
+            "accessProject": "View project",
             "viewCode": "View source"
         }
     }

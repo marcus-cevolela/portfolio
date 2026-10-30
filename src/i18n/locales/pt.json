@@ -56,6 +56,9 @@
         "backToTop": "Voltar ao topo",
         "logoAlt": "Logo Marcus Cevolela"
     },
+    "socialLinks": {
+        "sendEmail": "Enviar e-mail para Marcus Cevolela"
+    },
     "hero": {
         "availability": "// Disponível para estágio e freelancer",
         "role": "DESENVOLVEDOR FULLSTACK",

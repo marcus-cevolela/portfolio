@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { FaLinkedin, FaGithub, FaWhatsapp, FaInstagram, FaEnvelope } from 'react-icons/fa'
 
 type SocialLinksProps = {
@@ -33,6 +34,7 @@ const socialLinks = [
 ]
 
 export function SocialLinks({ variant = 'default' }: SocialLinksProps) {
+    const { t } = useTranslation()
     return variant === 'mobile' ? (
         <div>
             <div className="grid grid-cols-4 gap-3 min-[400px]:gap-5">
@@ -55,7 +57,7 @@ export function SocialLinks({ variant = 'default' }: SocialLinksProps) {
             </div>
             <a
                 href="mailto:marcus.cevolela@gmail.com"
-                aria-label="Enviar e-mail para Marcus Cevolela"
+                aria-label={t('socialLinks.sendEmail')}
                 className="group mt-2 min-[400px]:mt-3 flex w-full items-center justify-center gap-2 min-[400px]:gap-3 rounded-xl border-2 border-border bg-surface px-3 min-[400px]:px-4 py-3 min-[400px]:py-4 transition-all duration-250 hover:border-primary hover:scale-103"
             >
                 <FaEnvelope className="shrink-0 text-2xl min-[400px]:text-3xl text-text transition-colors duration-250 group-hover:text-primary" />

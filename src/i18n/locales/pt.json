@@ -37,6 +37,25 @@
         "backToTop": "Voltar ao topo",
         "whatsapp": "Falar no WhatsApp"
     },
+    "footer": {
+        "contact": {
+            "title": "// Vamos conversar",
+            "description": "Aberto para estágio ou freelancer",
+            "resume": "Baixar currículo"
+        },
+        "navigation": {
+            "projects": "Projetos",
+            "about": "Sobre",
+            "contact": "Contato"
+        },
+        "role": "DESENVOLVEDOR FULLSTACK",
+        "quickLinks": "// Links rápidos",
+        "developedWith": "// Desenvolvido com",
+        "availability": "Disponível para oportunidades",
+        "copyright": "Todos os direitos reservados",
+        "backToTop": "Voltar ao topo",
+        "logoAlt": "Logo Marcus Cevolela"
+    },
     "hero": {
         "availability": "// Disponível para estágio e freelancer",
         "role": "DESENVOLVEDOR FULLSTACK",

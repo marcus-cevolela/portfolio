@@ -37,6 +37,25 @@
         "backToTop": "Back to top",
         "whatsapp": "Chat on WhatsApp"
     },
+    "footer": {
+        "contact": {
+            "title": "// Let's Talk",
+            "description": "Open to internship and freelance opportunities",
+            "resume": "Download Resume"
+        },
+        "navigation": {
+            "projects": "Projects",
+            "about": "About",
+            "contact": "Contact"
+        },
+        "role": "FULLSTACK DEVELOPER",
+        "quickLinks": "// Quick Links",
+        "developedWith": "// Built With",
+        "availability": "Available for opportunities",
+        "copyright": "All rights reserved",
+        "backToTop": "Back to top",
+        "logoAlt": "Marcus Cevolela Logo"
+    },
     "hero": {
         "availability": "// Available for internships and freelance work",
         "role": "FULLSTACK DEVELOPER",

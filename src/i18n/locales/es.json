@@ -37,6 +37,25 @@
         "backToTop": "Volver arriba",
         "whatsapp": "Contactar por WhatsApp"
     },
+    "footer": {
+        "contact": {
+            "title": "// Hablemos",
+            "description": "Disponible para prácticas y trabajos freelance",
+            "resume": "Descargar currículum"
+        },
+        "navigation": {
+            "projects": "Proyectos",
+            "about": "Sobre mí",
+            "contact": "Contacto"
+        },
+        "role": "DESARROLLADOR FULLSTACK",
+        "quickLinks": "// Enlaces rápidos",
+        "developedWith": "// Desarrollado con",
+        "availability": "Disponible para oportunidades",
+        "copyright": "Todos los derechos reservados",
+        "backToTop": "Volver arriba",
+        "logoAlt": "Logotipo de Marcus Cevolela"
+    },
     "hero": {
         "availability": "// Disponible para prácticas y trabajos freelance",
         "role": "DESARROLLADOR FULLSTACK",

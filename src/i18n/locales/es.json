@@ -33,6 +33,10 @@
             "es": "Bandera de España"
         }
     },
+    "floatingActions": {
+        "backToTop": "Volver arriba",
+        "whatsapp": "Contactar por WhatsApp"
+    },
     "hero": {
         "availability": "// Disponible para prácticas y trabajos freelance",
         "role": "DESARROLLADOR FULLSTACK",

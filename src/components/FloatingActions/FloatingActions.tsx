@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
 import { FaWhatsapp, FaArrowUp } from 'react-icons/fa'
 
@@ -6,6 +7,7 @@ interface FloatingActionsProps {
 }
 
 export function FloatingActions({ isMenuOpen }: FloatingActionsProps) {
+    const { t } = useTranslation()
     const [showBackToTop, setShowBackToTop] = useState(false)
     const [hideActions, setHideActions] = useState(false)
     const shouldHideActions = hideActions || isMenuOpen
@@ -51,7 +53,7 @@ export function FloatingActions({ isMenuOpen }: FloatingActionsProps) {
         >
             <button
                 type="button"
-                aria-label="Voltar ao topo"
+                aria-label={t('floatingActions.backToTop')}
                 onClick={() =>
                     window.scrollTo({ top: 0, behavior: 'smooth' })
                 }
@@ -67,13 +69,13 @@ export function FloatingActions({ isMenuOpen }: FloatingActionsProps) {
                 href="https://wa.me/5521981213090"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Falar no WhatsApp"
+                aria-label={t('floatingActions.whatsapp')}
                 className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-colors duration-300 hover:bg-[#20BA5A] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#25D366]"
             >
                 <span
                     className="pointer-events-none absolute right-16 whitespace-nowrap rounded-xl border border-border bg-surface px-4 py-2.5 font-medium text-text-primary opacity-0 shadow-lg transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
                 >
-                    Falar no WhatsApp
+                    {t('floatingActions.whatsapp')}
                 </span>
 
                 <FaWhatsapp size={30} />

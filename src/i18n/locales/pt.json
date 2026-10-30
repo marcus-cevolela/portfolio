@@ -33,6 +33,10 @@
             "es": "Bandeira da Espanha"
         }
     },
+    "floatingActions": {
+        "backToTop": "Voltar ao topo",
+        "whatsapp": "Falar no WhatsApp"
+    },
     "hero": {
         "availability": "// Disponível para estágio e freelancer",
         "role": "DESENVOLVEDOR FULLSTACK",

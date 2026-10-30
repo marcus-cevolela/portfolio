@@ -33,6 +33,10 @@
             "es": "Flag of Spain"
         }
     },
+    "floatingActions": {
+        "backToTop": "Back to top",
+        "whatsapp": "Chat on WhatsApp"
+    },
     "hero": {
         "availability": "// Available for internships and freelance work",
         "role": "FULLSTACK DEVELOPER",

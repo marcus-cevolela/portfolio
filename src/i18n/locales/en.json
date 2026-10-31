@@ -76,5 +76,11 @@
             "accessProject": "View project",
             "viewCode": "View source"
         }
+    },
+    "projects": {
+        "eyebrow": "// featured projects",
+        "title": "Projects I've been building.",
+        "viewAll": "View all",
+        "caseStudy": "Case study"
     }
 }

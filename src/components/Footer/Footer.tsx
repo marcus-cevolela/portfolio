@@ -54,7 +54,11 @@ export function Footer() {
 
                 {/* logo */}
                 <div className="flex flex-col items-center justify-center self-center text-center order-1 lg:order-2">
-                    <img src={logo} alt="Logo Marcus Cevolela" className="w-40 lg:w-50 h-auto" />
+                    <img
+                        src={logo}
+                        alt={t('footer.logoAlt')}
+                        className="w-40 lg:w-50 h-auto"
+                    />
 
                     <h2 className="text-text font-semibold text-xl">Marcus Cevolela</h2>
 

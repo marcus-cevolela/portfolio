@@ -4,6 +4,7 @@ import { localizedRoutes } from './i18n/routes'
 import i18n from './i18n'
 import { MainLayout } from './layouts/MainLayout'
 import { Hero } from './sections/Hero'
+import { Projects } from './sections/Projects'
 import { useProjectSelection } from './hooks/useProjectSelection'
 
 function HomePage() {
@@ -12,9 +13,12 @@ function HomePage() {
         projectsSection,
     } = useProjectSelection()
 
-    void projectsSection
-
-    return <Hero featuredProject={featuredProject} />
+    return (
+        <>
+            <Hero featuredProject={featuredProject} />
+            <Projects projects={projectsSection} />
+        </>
+    )
 }
 
 function getNestedPath(path: string, language: Language) {

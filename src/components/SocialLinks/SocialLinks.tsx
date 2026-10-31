@@ -81,7 +81,7 @@ export function SocialLinks({ variant = 'default' }: SocialLinksProps) {
                     <span className="shrink-0 [&>svg]:h-6.25 [&>svg]:w-6.25">
                         {social.icon}
                     </span>
-                    {social.name}
+                    {social.name === 'Email' ? social.href.replace('mailto:', '') : social.name}
                 </a>
             ))}
         </div>

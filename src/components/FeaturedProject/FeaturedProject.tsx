@@ -1,17 +1,15 @@
-import { projects } from '../../data/projects'
+import type { Project } from '../../data/projects'
 import { useTranslation } from 'react-i18next'
 import { Image as ImageIcon, BookOpen, ExternalLink } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
 
 interface FeaturedProjectProps {
+    featuredProject: Project
     className?: string
 }
 
-export function FeaturedProject({ className }: FeaturedProjectProps) {
+export function FeaturedProject({ featuredProject, className }: FeaturedProjectProps) {
     const { t } = useTranslation()
-
-    const randomIndex = Math.floor(Math.random() * projects.length)
-    const project = projects[randomIndex]
 
     return (
         <article
@@ -36,16 +34,16 @@ export function FeaturedProject({ className }: FeaturedProjectProps) {
 
                     <div className="w-full min-w-0">
                         <h3 className="wrap-break-word text-base font-bold leading-tight min-[400px]:text-lg sm:text-xl md:text-3xl lg:text-2xl">
-                            {project.title}
+                            {featuredProject.title}
                         </h3>
 
                         <p className="wrap-break-word text-xs leading-snug text-text-secondary min-[400px]:text-[13px] sm:text-sm md:text-xl lg:text-base">
-                            {project.description}
+                            {featuredProject.description}
                         </p>
                     </div>
 
                     <div className="flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-1">
-                        {project.technologies.map((tech, index) => (
+                        {featuredProject.technologies.map((tech, index) => (
                             <span
                                 key={tech}
                                 className="inline-flex items-center gap-1 whitespace-nowrap font-mono text-[8px] font-bold text-text-tertiary min-[400px]:text-[10px] sm:text-xs md:text-base"
@@ -63,7 +61,7 @@ export function FeaturedProject({ className }: FeaturedProjectProps) {
             {/* Botões */}
             <div className="grid w-full min-w-0 grid-cols-3 gap-1.5 min-[400px]:gap-2 lg:col-span-1 lg:grid-cols-1">
                 <a
-                    href={project.caseStudyUrl}
+                    href={featuredProject.caseStudyUrl}
                     className="flex min-w-0 items-center justify-center gap-1 rounded-lg border-2 border-primary bg-primary px-1 py-2 text-center text-[9px] font-semibold leading-tight text-white transition-all duration-250 hover:scale-103 hover:border-primary-hover hover:bg-primary-hover min-[400px]:px-1.5 min-[400px]:text-[10px] sm:gap-2 sm:px-3 sm:text-sm lg:text-base"
                 >
                     <span>{t('hero.featuredProject.viewProject')}</span>
@@ -75,7 +73,7 @@ export function FeaturedProject({ className }: FeaturedProjectProps) {
                 </a>
 
                 <a
-                    href={project.demoUrl}
+                    href={featuredProject.demoUrl}
                     className="flex min-w-0 items-center justify-center gap-1 rounded-lg border-2 border-border bg-transparent px-1 py-2 text-center text-[9px] font-semibold leading-tight text-text-primary hover:border-primary hover:bg-hover min-[400px]:px-1.5 min-[400px]:text-[10px] sm:gap-2 sm:px-3 sm:text-sm lg:text-base transition-all duration-250 hover:scale-103"
                 >
                     <span>{t('hero.featuredProject.accessProject')}</span>
@@ -87,7 +85,7 @@ export function FeaturedProject({ className }: FeaturedProjectProps) {
                 </a>
 
                 <a
-                    href={project.githubUrl}
+                    href={featuredProject.githubUrl}
                     className="flex min-w-0 items-center justify-center gap-1 rounded-lg border-2 border-border bg-transparent px-1 py-2 text-center text-[9px] font-semibold leading-tight text-text-primary hover:border-primary hover:bg-hover min-[400px]:px-1.5 min-[400px]:text-[10px] sm:gap-2 sm:px-3 sm:text-sm lg:text-base transition-all duration-250 hover:scale-103"
                 >
                     <span>{t('hero.featuredProject.viewCode')}</span>

@@ -1,5 +1,6 @@
 import { useTheme } from '../hooks/useTheme'
 import { FeaturedProject } from '../components/FeaturedProject/FeaturedProject'
+import type { Project } from '../data/projects'
 import { useTranslation } from 'react-i18next'
 import Logo3D from '../components/Logo3D/Logo3D'
 import logoLightBlue from '../assets/logo-light-blue.svg'
@@ -33,7 +34,11 @@ const background = {
     },
 }
 
-export function Hero() {
+interface HeroProps {
+    featuredProject: Project
+}
+
+export function Hero({ featuredProject }: HeroProps) {
     const { t } = useTranslation()
     const { theme, accent } = useTheme()
 
@@ -98,8 +103,10 @@ export function Hero() {
                 />
             </div>
 
-            <FeaturedProject className="relative z-10 order-3 mx-auto w-full lg:col-span-2 lg:max-w-5xl" />
+            <FeaturedProject
+                featuredProject={featuredProject}
+                className="relative z-10 order-3 mx-auto w-full lg:col-span-2 lg:max-w-5xl"
+            />
         </section>
     )
 }
-

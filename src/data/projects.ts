@@ -44,4 +44,15 @@ export const projects: Project[] = [
         demoUrl: '#',
         githubUrl: '#',
     },
+    {
+        id: 'task-management',
+        title: 'Sistema de Gestão de Tarefas',
+        description: 'Uma plataforma para organização de tarefas e acompanhamento de produtividade.',
+        image: '',
+        technologies: ['C#', 'ASP.NET Core', 'PostgreSQL'],
+        category: 'personal',
+        caseStudyUrl: '/pt/projetos/task-management',
+        demoUrl: '#',
+        githubUrl: '#',
+    },
 ]

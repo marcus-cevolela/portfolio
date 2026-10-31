@@ -4,13 +4,17 @@ import { localizedRoutes } from './i18n/routes'
 import i18n from './i18n'
 import { MainLayout } from './layouts/MainLayout'
 import { Hero } from './sections/Hero'
+import { useProjectSelection } from './hooks/useProjectSelection'
 
 function HomePage() {
+    const {
+        featuredProject,
+        projectsSection,
+    } = useProjectSelection()
 
+    void projectsSection
 
-return (
-  <Hero />
-)
+    return <Hero featuredProject={featuredProject} />
 }
 
 function getNestedPath(path: string, language: Language) {

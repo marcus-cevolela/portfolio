@@ -1,5 +1,80 @@
 {
-    "test": {
-        "greeting": "¡Hola, mundo!"
+    "header": {
+        "navigation": {
+            "projects": "PROYECTOS",
+            "about": "SOBRE MÍ",
+            "contact": "CONTACTO"
+        },
+        "accessibility": {
+            "openMenu": "Abrir menú",
+            "closeMenu": "Cerrar menú",
+            "home": "Volver a la página de inicio",
+            "mainNavigation": "Navegación principal"
+        },
+        "customization": "// Personalización",
+        "social": "// Redes y contacto",
+        "resume": "Descargar currículum"
+    },
+    "colorSwitcher": {
+        "blue": "Azul",
+        "red": "Rojo",
+        "selectBlue": "Cambiar a azul",
+        "selectRed": "Cambiar a rojo"
+    },
+    "themeSwitcher": {
+        "switchToLight": "Cambiar al tema claro",
+        "switchToDark": "Cambiar al tema oscuro"
+    },
+    "languageSwitcher": {
+        "selectLanguage": "Seleccionar idioma",
+        "flags": {
+            "pt": "Bandera de Brasil",
+            "en": "Bandera de Estados Unidos",
+            "es": "Bandera de España"
+        }
+    },
+    "floatingActions": {
+        "backToTop": "Volver arriba",
+        "whatsapp": "Contactar por WhatsApp"
+    },
+    "footer": {
+        "contact": {
+            "title": "// Hablemos",
+            "description": "Disponible para prácticas y trabajos freelance",
+            "resume": "Descargar currículum"
+        },
+        "navigation": {
+            "projects": "Proyectos",
+            "about": "Sobre mí",
+            "contact": "Contacto"
+        },
+        "role": "DESARROLLADOR FULLSTACK",
+        "quickLinks": "// Enlaces rápidos",
+        "developedWith": "// Desarrollado con",
+        "availability": "Disponible para oportunidades",
+        "copyright": "Todos los derechos reservados",
+        "backToTop": "Volver arriba",
+        "logoAlt": "Logotipo de Marcus Cevolela"
+    },
+    "socialLinks": {
+        "sendEmail": "Enviar un correo electrónico a Marcus Cevolela"
+    },
+    "hero": {
+        "availability": "// Disponible para prácticas y trabajos freelance",
+        "role": "DESARROLLADOR FULLSTACK",
+        "description": {
+            "headline": "Entran ideas, salen experiencias digitales.",
+            "supporting": "En el medio, diseño y código hechos con atención a cada detalle. De Figma al deploy, un proyecto a la vez."
+        },
+        "actions": {
+            "projects": "Ver proyectos",
+            "contact": "Contáctame"
+        },
+        "featuredProject": {
+            "label": "PROYECTO DESTACADO",
+            "viewProject": "Estudio de caso",
+            "accessProject": "Ver proyecto",
+            "viewCode": "Ver código"
+        }
     }
 }

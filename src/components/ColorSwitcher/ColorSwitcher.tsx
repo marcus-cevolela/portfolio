@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { useTheme } from '../../hooks/useTheme'
 
 type ColorSwitcherProps = {
@@ -7,13 +8,14 @@ type ColorSwitcherProps = {
 export function ColorSwitcher({
     variant = "default",
 }: ColorSwitcherProps) {
+    const { t } = useTranslation()
     const { accent, setAccent } = useTheme()
 
     return variant === "mobile" ? (
         <div className="grid grid-cols-2 gap-2.5 w-full">
             <button
                 type="button"
-                aria-label="Alternar para Azul"
+                aria-label={t('colorSwitcher.selectBlue')}
                 aria-pressed={accent === "blue"}
                 onClick={() => setAccent("blue")}
                 className={`w-full flex items-center gap-2.5 min-h-14 px-3.5 rounded-[14px] border-2 bg-bg text-text text-[15px] font-semibold text-3xl text-left transition-colors ${accent === "blue"
@@ -27,13 +29,13 @@ export function ColorSwitcher({
                         : ""
                         }`}
                     />
-                    <span>Azul</span>
+                    <span>{t('colorSwitcher.blue')}</span>
                 </span>
             </button>
 
             <button
                 type="button"
-                aria-label="Alternar para Vermelho"
+                aria-label={t('colorSwitcher.selectRed')}
                 aria-pressed={accent === "red"}
                 onClick={() => setAccent("red")}
                 className={`w-full flex items-center gap-2.5 min-h-14 px-3.5 rounded-[14px] border-2 bg-bg text-text text-[15px] font-semibold text-left transition-colors ${accent === "red"
@@ -48,7 +50,7 @@ export function ColorSwitcher({
                                 : ""
                             }`}
                     />
-                    <span>Vermelho</span>
+                    <span>{t('colorSwitcher.red')}</span>
                 </span>
             </button>
         </div>
@@ -56,7 +58,7 @@ export function ColorSwitcher({
         <div className="inline-flex items-center gap-3 px-2 min-w-11 h-11 border-2 border-border rounded-xl bg-bg">
             <button
                 type="button"
-                aria-label="Alternar para Azul"
+                aria-label={t('colorSwitcher.selectBlue')}
                 aria-pressed={accent === "blue"}
                 onClick={() => setAccent("blue")}
                 className={
@@ -68,7 +70,7 @@ export function ColorSwitcher({
 
             <button
                 type="button"
-                aria-label="Alternar para Vermelho"
+                aria-label={t('colorSwitcher.selectRed')}
                 aria-pressed={accent === "red"}
                 onClick={() => setAccent("red")}
                 className={

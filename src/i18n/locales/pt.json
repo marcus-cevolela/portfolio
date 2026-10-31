@@ -1,5 +1,80 @@
 {
-    "test": {
-        "greeting": "Olá, mundo!"
+    "header": {
+        "navigation": {
+            "projects": "PROJETOS",
+            "about": "SOBRE MIM",
+            "contact": "CONTATO"
+        },
+        "accessibility": {
+            "openMenu": "Abrir menu",
+            "closeMenu": "Fechar menu",
+            "home": "Voltar para a página inicial",
+            "mainNavigation": "Navegação principal"
+        },
+        "customization": "// Personalização do Site",
+        "social": "// Redes e Contato",
+        "resume": "Baixar currículo"
+    },
+    "colorSwitcher": {
+        "blue": "Azul",
+        "red": "Vermelho",
+        "selectBlue": "Alternar para Azul",
+        "selectRed": "Alternar para Vermelho"
+    },
+    "themeSwitcher": {
+        "switchToLight": "Alternar para tema claro",
+        "switchToDark": "Alternar para tema escuro"
+    },
+    "languageSwitcher": {
+        "selectLanguage": "Selecionar idioma",
+        "flags": {
+            "pt": "Bandeira do Brasil",
+            "en": "Bandeira dos Estados Unidos",
+            "es": "Bandeira da Espanha"
+        }
+    },
+    "floatingActions": {
+        "backToTop": "Voltar ao topo",
+        "whatsapp": "Falar no WhatsApp"
+    },
+    "footer": {
+        "contact": {
+            "title": "// Vamos conversar",
+            "description": "Aberto para estágio ou freelancer",
+            "resume": "Baixar currículo"
+        },
+        "navigation": {
+            "projects": "Projetos",
+            "about": "Sobre",
+            "contact": "Contato"
+        },
+        "role": "DESENVOLVEDOR FULLSTACK",
+        "quickLinks": "// Links rápidos",
+        "developedWith": "// Desenvolvido com",
+        "availability": "Disponível para oportunidades",
+        "copyright": "Todos os direitos reservados",
+        "backToTop": "Voltar ao topo",
+        "logoAlt": "Logo Marcus Cevolela"
+    },
+    "socialLinks": {
+        "sendEmail": "Enviar e-mail para Marcus Cevolela"
+    },
+    "hero": {
+        "availability": "// Disponível para estágio e freelancer",
+        "role": "DESENVOLVEDOR FULLSTACK",
+        "description": {
+            "headline": "Ideias entram, experiências digitais saem.",
+            "supporting": "No meio, design e código feitos com atenção a cada detalhe. Do Figma ao deploy, um projeto de cada vez."
+        },
+        "actions": {
+            "projects": "Ver projetos",
+            "contact": "Falar comigo"
+        },
+        "featuredProject": {
+            "label": "PROJETO EM DESTAQUE",
+            "viewProject": "Estudo de caso",
+            "accessProject": "Acessar projeto",
+            "viewCode": "Ver código"
+        }
     }
 }
